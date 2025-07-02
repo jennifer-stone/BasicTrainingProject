@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import Board from './Board';
+import React from 'react';
+import TicTacToe from './Board'; // assuming your component is in Board.jsx or Board.js
 
 function App() {
   return (
+<<<<<<< HEAD
     <div className="App">
       {/* <Board /> */}
       <header className="App-header">
@@ -20,6 +20,10 @@ function App() {
           Learn React
         </a>
       </header>
+=======
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <TicTacToe />
+>>>>>>> d74bae8 (new features)
     </div>
   );
 }
