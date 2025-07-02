@@ -5,6 +5,7 @@ import Board from './Board';
 function App() {
   return (
     <div className="App">
+      {/* <Board /> */}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
