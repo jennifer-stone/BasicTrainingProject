@@ -1,12 +1,13 @@
 import React from 'react';
-import TicTacToe from './Board'; // assuming your component is in Board.jsx or Board.js
+import Board from './Board'; // or './TicTacToe' depending on the filename
 
 function App() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <TicTacToe />
+      <Board />
     </div>
   );
 }
 
 export default App;
+
