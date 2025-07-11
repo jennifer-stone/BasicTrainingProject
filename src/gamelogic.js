@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 
 const Square = ({ value, onClick }) => {
@@ -12,6 +13,10 @@ const Square = ({ value, onClick }) => {
 };
 
 const calculateWinner = (squares) => {
+=======
+// src/gamelogic.js
+export function calculateWinner(squares) {
+>>>>>>> feature-
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -28,6 +33,7 @@ const calculateWinner = (squares) => {
     }
   }
   return null;
+<<<<<<< HEAD
 };
 
 const TicTacToe = () => {
@@ -71,3 +77,7 @@ const TicTacToe = () => {
 };
 
 export default TicTacToe;
+=======
+}
+
+>>>>>>> feature-

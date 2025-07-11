@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import TicTacToe from './Board'; // assuming your component is in Board.jsx or Board.js
 
 function App() {
@@ -24,8 +25,17 @@ function App() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <TicTacToe />
 >>>>>>> d74bae8 (new features)
+=======
+import Board from './Board'; // or './TicTacToe' depending on the filename
+
+function App() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <Board />
+>>>>>>> feature-
     </div>
   );
 }
 
 export default App;
+
