@@ -30,21 +30,46 @@ const calculateWinner = (squares) => {
   return null;
 };
 
+const isDraw = (squares) => {
+  return squares.every(square => square !== null) && !calculateWinner(squares);
+};
+
 const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
 
   const winner = calculateWinner(squares);
+  const draw = isDraw(squares);
   const status = winner
     ? `Winner: ${winner}`
+    : draw
+    ? "It's a draw!"
     : `Next player: ${xIsNext ? 'X' : 'O'}`;
 
   const handleClick = (index) => {
     if (squares[index] || winner) return;
+
     const nextSquares = squares.slice();
     nextSquares[index] = xIsNext ? 'X' : 'O';
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
+
+    const nextWinner = calculateWinner(nextSquares);
+    const nextDraw = isDraw(nextSquares);
+
+    if (nextWinner) {
+      document.body.style.backgroundColor = '#90ee90';
+      setTimeout(() => {
+        handleRestart();
+        document.body.style.backgroundColor = '#ffffff';
+      }, 3000);
+    } else if (nextDraw) {
+      document.body.style.backgroundColor = '#f0ad4e';
+      setTimeout(() => {
+        handleRestart();
+        document.body.style.backgroundColor = '#ffffff';
+      }, 3000);
+    }
   };
 
   const handleRestart = () => {
@@ -72,5 +97,3 @@ const Board = () => {
 };
 
 export default Board;
-
-
