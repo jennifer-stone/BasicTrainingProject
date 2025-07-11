@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 
 const Square = ({ value, onClick }) => {
+  const textColor =
+    value === 'X'
+      ? 'text-pink-300'  // Light pink
+      : value === 'O'
+      ? 'text-pink-600'  // Hot pink
+      : '';
+
   return (
     <button
       onClick={onClick}
-      className="w-20 h-20 border border-gray-400 text-2xl font-bold"
+      className={`w-40 h-40 bg-black border border-white text-5xl font-bold ${textColor}`}
+
     >
       {value}
     </button>
@@ -78,20 +86,20 @@ const Board = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-2xl font-bold mb-4">Tic Tac Toe</h1>
-      <div className="text-lg mb-2">{status}</div>
-      <div className="grid grid-cols-3 gap-1">
-        {squares.map((value, index) => (
-          <Square key={index} value={value} onClick={() => handleClick(index)} />
-        ))}
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen w-full bg-black text-white">
+      <h1 className="text-5xl font-bold mb-6">Tic Tac Toe</h1>    
+      <div className="text-2xl mb-4">{status}</div>
+      <div className="grid grid-cols-3 gap-4 bg-black p-4">
+  {squares.map((value, index) => (
+    <Square key={index} value={value} onClick={() => handleClick(index)} />
+  ))}
+      </div>  
       <button
-        onClick={handleRestart}
-        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-      >
-        Restart
-      </button>
+  onClick={handleRestart}
+  className="mt-4 px-4 py-2 bg-pink-300 text-pink-700 font-bold rounded hover:bg-pink-600 hover:text-white transition-colors duration-200"
+>
+  Restart
+  </button>
     </div>
   );
 };
