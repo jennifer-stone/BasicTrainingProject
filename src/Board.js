@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-import React from 'react'
-
-export default function Board() {
-  return (
-    <div>
-       
-    </div>
-  )
-}
-=======
-=======
->>>>>>> feature-
 import React, { useState } from 'react';
 
 const Square = ({ value, onClick }) => {
@@ -86,8 +72,5 @@ const Board = () => {
 };
 
 export default Board;
-<<<<<<< HEAD
 
->>>>>>> d74bae8 (new features)
-=======
->>>>>>> feature-
+
